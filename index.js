@@ -33,7 +33,7 @@ const timestampOfDay = 1000*60*60*24;
 const fullToday = getFullDate();
 const fullYesterday = getFullDate(nowDate - timestampOfDay);
 
-const nowDay = nowDate.getDay(); // getDay 方法返回0 表示星期天
+let nowDay = nowDate.getDay(); // getDay 方法返回0 表示星期天
 nowDay = nowDay === 0 ? 7 : nowDay;
 
 // 本周一，本周末(星期天)
