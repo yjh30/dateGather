@@ -51,5 +51,6 @@ export default {
     fullMonday,
     fullSunday,
     fullStartOfMonth,
-    fullEndOfMonth
+    fullEndOfMonth,
+    getFullDate
 };
