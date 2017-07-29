@@ -4,10 +4,9 @@
 
 ### Usage
 ```javascript
-import dateGather from 'dateGather';
+import dateGather from 'date-gather';
 
-/**
- 
+/*
 	dateGather.fullToday // 今天
     dateGather.fullYesterday // 昨天 
     dateGather.fullMonday // 星期一
@@ -16,6 +15,6 @@ import dateGather from 'dateGather';
     dateGather.fullEndOfMonth // 本月最后一天
 
 	dateGather.getFullDate(1501314383824); // 得到 2017-07-29
- */
+*/
 
 ```
