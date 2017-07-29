@@ -1,5 +1,3 @@
-import formatTimestamp from 'format-timestamp';
-
 const nowDate = new Date();
 const cloneNowDate = new Date();
 
@@ -28,7 +26,15 @@ function getFullDate(targetDate, accurateToSecond = false) {
     // 精确到秒
     if (accurateToSecond) {
         const dateObj = (D || nowDate);
-        return `${y}-${m}-${d} ${dateObj.getHours()}:${dateObj.getMinutes()}:${dateObj.getSeconds()}`;
+        let hours = dateObj.getHours();
+        let minutes = dateObj.getMinutes();
+        let seconds = dateObj.getSeconds();
+
+        hours = hours > 9 ? hours : '0' + hours;
+        minutes = minutes > 9 ? minutes : '0' + minutes;
+        seconds = seconds > 9 ? seconds : '0' + seconds;
+
+        return `${y}-${m}-${d} ${hours}:${minutes}:${seconds}`;
     } else {
         return `${y}-${m}-${d}`;
     }
