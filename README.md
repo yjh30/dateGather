@@ -4,7 +4,7 @@
 
 ### Usage
 ```javascript
-import dateGather from 'dateGather';
+import dateGather from 'date-gather';
 
 /**
  
