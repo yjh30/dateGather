@@ -46,10 +46,10 @@ const fullStartOfMonth = getFullDate( cloneNowDate.setDate(1) );
 const fullEndOfMonth = getFullDate( cloneNowDate.setDate(endOfMonth) );
 
 export default {
-    fullToday: fullToday,
-    fullYesterday: fullYesterday,
-    fullMonday: fullMonday,
-    fullSunday: fullSunday,
-    fullStartOfMonth: fullStartOfMonth,
-    fullEndOfMonth: fullEndOfMonth
+    fullToday,
+    fullYesterday,
+    fullMonday,
+    fullSunday,
+    fullStartOfMonth,
+    fullEndOfMonth
 };
