@@ -1,3 +1,5 @@
+import formatTimestamp from 'format-timestamp';
+
 const nowDate = new Date();
 const cloneNowDate = new Date();
 
@@ -8,7 +10,7 @@ const date = nowDate.getDate();
 const endOfMonth = new Date(fullYear, month, 0).getDate(); // 获取本月最后一天
 
 // 格式化日期 (2016-02-14)
-function getFullDate(targetDate) {
+function getFullDate(targetDate, accurateToSecond = false) {
     let D, y, m, d;
     if (targetDate) {
         D = new Date(targetDate);
@@ -23,7 +25,13 @@ function getFullDate(targetDate) {
     m = m > 9 ? m : '0' + m;
     d = d > 9 ? d : '0' + d;
 
-    return y + '-' + m + '-' + d;
+    // 精确到秒
+    if (accurateToSecond) {
+        const dateObj = (D || nowDate);
+        return `${y}-${m}-${d} ${dateObj.getHours()}:${dateObj.getMinutes()}:${dateObj.getSeconds()}`;
+    } else {
+        return `${y}-${m}-${d}`;
+    }
 }
 
 // 一天的时间戳(毫秒为单位)
