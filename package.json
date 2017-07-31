@@ -1,6 +1,6 @@
 {
   "name": "date-gather",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "日期集合",
   "main": "index.js",
   "scripts": {

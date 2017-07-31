@@ -60,11 +60,11 @@ var fullStartOfMonth = getFullDate( cloneNowDate.setDate(1) );
 var fullEndOfMonth = getFullDate( cloneNowDate.setDate(endOfMonth) );
 
 module.exports = {
-    fullToday,
-    fullYesterday,
-    fullMonday,
-    fullSunday,
-    fullStartOfMonth,
-    fullEndOfMonth,
-    getFullDate
+    fullToday: fullToday
+    fullYesterday: fullYesterday
+    fullMonday: fullMonday
+    fullSunday: fullSunday
+    fullStartOfMonth: fullStartOfMonth
+    fullEndOfMonth: fullEndOfMonth
+    getFullDate: getFullDate
 };
