@@ -1,15 +1,15 @@
-const nowDate = new Date();
-const cloneNowDate = new Date();
+var nowDate = new Date();
+var cloneNowDate = new Date();
 
-const fullYear = nowDate.getFullYear();
-const month = nowDate.getMonth() + 1; // getMonth 方法返回 0-11，代表1-12月
-const date = nowDate.getDate();
+var fullYear = nowDate.getFullYear();
+var month = nowDate.getMonth() + 1; // getMonth 方法返回 0-11，代表1-12月
+var date = nowDate.getDate();
 
-const endOfMonth = new Date(fullYear, month, 0).getDate(); // 获取本月最后一天
+var endOfMonth = new Date(fullYear, month, 0).getDate(); // 获取本月最后一天
 
 // 格式化日期 (2016-02-14)
 function getFullDate(targetDate, accurateToSecond) {
-    let D, y, m, d;
+    var D, y, m, d;
     if (targetDate) {
         D = new Date(targetDate);
         y = D.getFullYear();
@@ -25,10 +25,10 @@ function getFullDate(targetDate, accurateToSecond) {
 
     // 精确到秒
     if (accurateToSecond) {
-        const dateObj = (D || nowDate);
-        let hours = dateObj.getHours();
-        let minutes = dateObj.getMinutes();
-        let seconds = dateObj.getSeconds();
+        var dateObj = (D || nowDate);
+        var hours = dateObj.getHours();
+        var minutes = dateObj.getMinutes();
+        var seconds = dateObj.getSeconds();
 
         hours = hours > 9 ? hours : '0' + hours;
         minutes = minutes > 9 ? minutes : '0' + minutes;
@@ -41,25 +41,25 @@ function getFullDate(targetDate, accurateToSecond) {
 }
 
 // 一天的时间戳(毫秒为单位)
-const timestampOfDay = 1000*60*60*24;
+var timestampOfDay = 1000*60*60*24;
 
 // 今天，昨天
-const fullToday = getFullDate();
-const fullYesterday = getFullDate(nowDate - timestampOfDay);
+var fullToday = getFullDate();
+var fullYesterday = getFullDate(nowDate - timestampOfDay);
 
-let nowDay = nowDate.getDay(); // getDay 方法返回0 表示星期天
+var nowDay = nowDate.getDay(); // getDay 方法返回0 表示星期天
 nowDay = nowDay === 0 ? 7 : nowDay;
 
 // 本周一，本周末(星期天)
 // 注：在safari下（nowDate +- 0）不会转换为时间戳，这里在nowDate前加上运算符+，手动转换时间戳运算
-const fullMonday = getFullDate( +nowDate - (nowDay-1)*timestampOfDay );
-const fullSunday = getFullDate( +nowDate + (7-nowDay)*timestampOfDay );
+var fullMonday = getFullDate( +nowDate - (nowDay-1)*timestampOfDay );
+var fullSunday = getFullDate( +nowDate + (7-nowDay)*timestampOfDay );
 
 // 月初，月末
-const fullStartOfMonth = getFullDate( cloneNowDate.setDate(1) );
-const fullEndOfMonth = getFullDate( cloneNowDate.setDate(endOfMonth) );
+var fullStartOfMonth = getFullDate( cloneNowDate.setDate(1) );
+var fullEndOfMonth = getFullDate( cloneNowDate.setDate(endOfMonth) );
 
-export default {
+module.exports = {
     fullToday,
     fullYesterday,
     fullMonday,
