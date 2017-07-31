@@ -34,9 +34,9 @@ function getFullDate(targetDate, accurateToSecond) {
         minutes = minutes > 9 ? minutes : '0' + minutes;
         seconds = seconds > 9 ? seconds : '0' + seconds;
 
-        return `${y}-${m}-${d} ${hours}:${minutes}:${seconds}`;
+        return y + '-' + m + '-' + d + ' ' + hours + ':' + minutes + ':' + seconds;
     } else {
-        return `${y}-${m}-${d}`;
+        return y + '-' + m + '-' + d;
     }
 }
 
