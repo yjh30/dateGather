@@ -8,7 +8,7 @@ const date = nowDate.getDate();
 const endOfMonth = new Date(fullYear, month, 0).getDate(); // 获取本月最后一天
 
 // 格式化日期 (2016-02-14)
-function getFullDate(targetDate, accurateToSecond = false) {
+function getFullDate(targetDate, accurateToSecond) {
     let D, y, m, d;
     if (targetDate) {
         D = new Date(targetDate);
